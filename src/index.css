@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800;
+}
+
+/* 打印：仅输出标记为 printable 的合同文档（导出 PDF 用） */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-doc,
+  .print-doc * {
+    visibility: visible;
+  }
+  .print-doc {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+}
